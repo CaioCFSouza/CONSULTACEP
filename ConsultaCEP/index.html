@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt br">
+    <head>
+        <meta charset="utf-8">
+        <title>Consulta CEP</title>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+
+         <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+        
+        
+        <style>
+            label{
+                font-weight: bold;
+            }
+
+            h1{
+                display: inline;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                /* display: none; <- Crashes Chrome on hover */
+                -webkit-appearance: none;
+                margin: 0; /* <-- Margem oculta */
+            }
+
+            input[type=number] {
+                -moz-appearance:textfield; /* Firefox */
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container p-3 mt-5">
+            <div>
+                <h1 class="text-primary">Consulta CEP</h1>
+            </div>
+
+            <form class="row g-3 mt-5 ">
+                <!--Div consulta cep-->
+                <div class="input-group mt-5 ">
+                    <input type="text" class="form-control" placeholder="Digite o CEP" aria-label="Recipient's username" aria-describedby="button-addon2" id="cep">
+                        <button class="btn btn-outline-primary" type="button" onclick="consultaCep()">Consultar</button> 
+                        <button type="button" class="btn btn-outline-primary" onclick="ConsultaemMassa()">Consulta em massa</button>
+                </div>
+
+                <!--Divs resultado cep-->
+                <div class="col-md-6">
+                <label class="form-label">CEP:</label>
+                <input type="text" class="form-control" id="cep_resultado" disabled>
+                </div>
+
+                <div class="col-md-6">
+                <label class="form-label">Rua:</label>
+                <input type="text" class="form-control" id="rua_resultado" disabled>
+                </div>
+
+                <div class="col-12">
+                <label class="form-label">Bairro:</label>
+                <input type="text" class="form-control" id="bairro_resultado" disabled>
+                </div>
+
+                <div class="col-12">
+                <label class="form-label">Cidade:</label>
+                <input type="text" class="form-control" id="cidade_resultado" disabled>
+                </div>
+
+                <div class="col-md-6">
+                <label class="form-label">UF:</label>
+                <input type="text" class="form-control" id="uf_resultado" disabled> 
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Código IBGE:</label>
+                    <input type="text" class="form-control" id="cod_ibge_resultado" disabled>
+                </div>
+
+                <div>
+                    <label for="inputCity" class="form-label">Resultado formatado:</label>
+                    <input type="text" class="form-control" id="valor_formatado_resultado" disabled>
+                </div>
+                <span id="consulta_em_massa"></span>
+            </form>
+            
+            <!--Consulta em massa-->
+            <table class="table table-dark table-striped text-dark" id="consulta-em-massa">
+              <h3>Resultado consulta em massa:</h3> 
+            </table>
+
+        </div>
+
+        
+
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="bootstrap/js/bootstrap.bundle.min.js" ></script>
+        <script src="js/consulta_cep.js"></script>
+        <script src="js/consulta_em_massa.js"></script>
+
+
+    </body>
+</html>
